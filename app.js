@@ -2,6 +2,7 @@ require('dotenv').config();
 const morgan = require('morgan');
 const express =  require("express");
 const router =  require("./router/router");
+const database =  require("./config/database");
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/chatgpt', router);
 
 // Server
-app.listen(PORT, () => {
-    console.log(`server listening on port ${PORT}`);
+app.listen(PORT, async () => {
+    const db = await database.connect();
+    console.log(`Server listening on port ${PORT} \nDatabase ${db}`);
 })
