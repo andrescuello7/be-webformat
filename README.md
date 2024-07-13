@@ -8,7 +8,7 @@ Repository: https://github.com/Azure/gpt-rag-orchestrator
 Clone repository:
 
    ```bash
-   git clone https://github.com/andrescuello7/be-orchestrator
+   git clone https://github.com/andrescuello7/be-hackaton
    cd be-orchestrator/
    ````
 
