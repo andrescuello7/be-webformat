@@ -1,0 +1,24 @@
+{
+  "name": "hackaton_openai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "andrescuello7",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/openai": "^1.0.0-beta.12",
+    "ai": "^3.2.22",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4",
+    "openai": "^4.52.7",
+    "openai-edge": "^1.2.2",
+    "vercel": "^34.3.1"
+  }
+}
