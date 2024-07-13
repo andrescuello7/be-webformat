@@ -40,4 +40,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
-            pm2 restart all # o reemplaza con el comando específico para reiniciar tu aplicación Node.js
+            cd /var/www/html/Andy/be-hackaton
+            git restore .
+            git checkout develop
+            git pull origin develop
+            npm install
+            pm2 restart 0
