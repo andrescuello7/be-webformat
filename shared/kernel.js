@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 const { OpenAIStream, StreamingTextResponse } = require('ai');
 const { OpenAIClient, AzureKeyCredential } = require('@azure/openai');
 const { values } = require('./values');

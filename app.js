@@ -1,8 +1,7 @@
 require('dotenv').config();
 const morgan = require('morgan');
-const express =  require("express");
-const router =  require("./router/router");
-const database =  require("./config/database");
+const express = require("express");
+const database = require("./database");
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -10,12 +9,12 @@ const PORT = process.env.PORT || 8000;
 // Middleware: Logger de solicitudes HTTP con Morgan
 app.use(morgan('dev'));
 
-// Settings
+// Settings: config options
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
-app.use('/chatgpt', router);
+// Routes: routes (default routes are defined in app.routes)
+app.use('/chatgpt', require("./router/router"));
 
 // Server
 app.listen(PORT, async () => {
