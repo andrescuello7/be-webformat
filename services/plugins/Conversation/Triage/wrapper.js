@@ -1,4 +1,4 @@
-const triage = async (kernel, conversationPlugin, _arguments) => {
+const triage = async (kernel, conversationPlugin, arguments) => {
     /*  This function is used to triage the user's request and determine its intent. 
     Depending on the intent, it either generates a search query for sources (if it's a Q&A question) 
     or directly generates an answer (if it's not a Q&A question).
@@ -19,9 +19,10 @@ const triage = async (kernel, conversationPlugin, _arguments) => {
             
     Raises:
         Exception: If there's a JSON decoding error when processing the function result. */
+    let result = { answer: '' }
+    result['answer'] = await kernel(arguments, conversationPlugin);
     
-    const answer = await kernel(_arguments, conversationPlugin);
-    return answer;
+    return result;
 }
 
 module.exports = { triage }

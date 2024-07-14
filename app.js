@@ -4,7 +4,7 @@ const express = require("express");
 const database = require("./database");
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 4001;
 
 // Middleware: Logger de solicitudes HTTP con Morgan
 app.use(morgan('dev'));
@@ -20,4 +20,4 @@ app.use('/chatgpt', require("./router/router"));
 app.listen(PORT, async () => {
     const db = await database.connect();
     console.log(`Server listening on port ${PORT} \nDatabase ${db}`);
-})
+});

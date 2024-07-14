@@ -20,13 +20,13 @@ const addKernel = async (arg) => {
 }
 
 // Function to handle a question using the created kernel
-const createKernel = async (_arguments, conversationPlugin) => {
+const createKernel = async (arguments, conversationPlugin) => {
 
     // TODO i18n: structured on code for prompint?
-    _arguments[0]['content'] = `${_arguments[0]['content']} \n ${conversationPlugin}`
+    arguments[0]['content'] = `${arguments[0]['content']} \n ${conversationPlugin}`
     
     // Call kernelCreate to get the kernel response
-    const _createKernel = await addKernel(_arguments);
+    const _createKernel = await addKernel(arguments);
     return kernelParseStream({ result: _createKernel });
 }
 
